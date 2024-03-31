@@ -45,7 +45,7 @@ class ShopComponent extends Component
         else{
             $products =  Product::paginate($this->pageSize);
         }
-        
+
         return view('livewire.shop-component',['products'=>$products]);
     }
 }

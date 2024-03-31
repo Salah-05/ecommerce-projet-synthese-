@@ -50,7 +50,7 @@
                                             <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span>{{$orderBy}} <i class="fi-rs-angle-small-down"></i></span>
+                                            <span>{{ $orderBy }} <i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
