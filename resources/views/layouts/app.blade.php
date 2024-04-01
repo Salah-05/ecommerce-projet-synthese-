@@ -70,7 +70,7 @@
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a href="index.html"><img src="assets/imgs/logo/logo.png" alt="logo"></a>
+                        <a href="index.html"><img src="assets/imgs/logo/logonike3.png" alt="logo"></a>
                     </div>
                     <div class="header-right">
                         <div class="search-style-1">
