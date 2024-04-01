@@ -15,7 +15,8 @@ class DetailsComponent extends Component
     {
         Cart::add($product_id,$product_name,1,$product_price)->associate('\App\Models\Product');
         session()->flash('success_message','Item added in Cart');
-        return redirect()->route( 'shop.cart');
+        // return redirect()->route( 'shop.cart'); Cela permet généralement à l'utilisateur de voir le contenu actuel de son panier.
+        return back(); //rediriger l'utilisateur vers la même page sur laquelle il se trouve actuellement
 
     }
     public function render()
