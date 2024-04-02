@@ -1366,13 +1366,13 @@
                     <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-3-arrows"></div>
                     <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/pumabrand.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/nikebrand.png" alt="">
                         </div>
                         <div class="brand-logo">
                             <img class="img-grey-hover" src="assets/imgs/banner/jordanbrand.png" alt="">
                         </div>
                         <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/nikebrand.png" alt="">
+                            <img class="img-grey-hover" src="assets/imgs/banner/pumabrand.png" alt="">
                         </div>
                         <div class="brand-logo">
                             <img class="img-grey-hover" src="assets/imgs/banner/adidasbrand.png" alt="">
