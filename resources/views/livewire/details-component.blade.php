@@ -21,7 +21,7 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="{{asset('assets/imgs/shop/product-')}}{{$product->id}}-2.jpg" alt="product image">
+                                                <img src="{{asset('assets/imgs/shop/chauss')}}{{$product->id}}.png" alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
                                                 <img src="{{asset('assets/imgs/shop/product-16-1.jpg')}}" alt="product image">
@@ -438,8 +438,8 @@
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="{{route('product.details',['slug'=>$rproduct->slug])}}" tabindex="0">
-                                                            <img class="default-img" src="{{asset('assets/imgs/shop/product-')}}{{$rproduct->id}}-1.jpg" alt="{{$rproduct->name}}">
-                                                            <img class="hover-img" src="{{asset('assets/imgs/shop/product-2-2.jpg')}}" alt="">
+                                                            <img class="default-img" src="{{asset('assets/imgs/shop/chauss')}}{{$rproduct->id}}.png" alt="{{$rproduct->name}}">
+                                                            <img class="hover-img" src="{{asset('assets/imgs/shop/chauss')}}{{$rproduct->id}}-1.png" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action-1">
