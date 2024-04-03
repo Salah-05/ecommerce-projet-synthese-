@@ -113,8 +113,8 @@
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
                                             <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/product-1-1.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/product-1-2.jpg" alt="">
+                                                <img class="default-img" src="assets/imgs/shop/chauss1.png" alt="">
+                                                <img class="hover-img" src="assets/imgs/shop/chauss1-1.png" alt="">
                                             </a>
                                         </div>
                                         <div class="product-action-1">
