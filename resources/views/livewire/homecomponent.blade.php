@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-lg-7 col-md-6">
                                 <div class="single-slider-img single-slider-img-1">
-                                    <img class="animated slider-1-1" src="assets/imgs/slider/slider-1.png" alt="">
+                                    <img class="animated slider-1-1" src="assets/imgs/slider/slider-17.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-lg-7 col-md-6">
                                 <div class="single-slider-img single-slider-img-1">
-                                    <img class="animated slider-1-2" src="assets/imgs/slider/slider-2.png" alt="">
+                                    <img class="animated slider-1-2" src="assets/imgs/slider/slider-4.png" alt="">
                                 </div>
                             </div>
                         </div>
