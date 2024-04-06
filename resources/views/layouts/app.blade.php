@@ -403,7 +403,7 @@
                                                 </ul>
                                             @else
                                                 <ul class="sub-menu">
-                                                    <li><a href="{{route('user.dashboard')}}">Dashboard</a></li>
+                                                    <li><a href="{{route('profile.edit')}}">Dashboard</a></li>
                                                 </ul>
                                             @endif
                                         @endif

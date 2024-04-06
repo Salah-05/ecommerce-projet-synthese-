@@ -93,7 +93,7 @@ input:focus::-moz-placeholder {
 }
 
 a {
-  color: #F15412;
+  color: #0b0b0b;
 }
 
 a:hover {
@@ -692,11 +692,11 @@ strong,
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #F15412;
+  background-color: #0f0e0e;
 }
 
 .section-title span {
-  color: #F15412;
+  color: #090909;
 }
 
 h3.section-title {
@@ -778,7 +778,7 @@ h5.widget-title {
 /*COMPONENTS -> BUTTONS*/
 .btn-default {
   color: #fff;
-  background-color: #F15412;
+  background-color: #0a0a0a;
   border-radius: 50px;
   padding: 13px 28px;
 }
@@ -892,8 +892,8 @@ button.submit:hover, button[type='submit']:hover {
   padding: 12px 30px;
   border-radius: 4px;
   color: #fff;
-  border: 1px solid #F15412;
-  background-color: #F15412;
+  border: 1px solid #faf9f8;
+  background-color: #070707;
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
@@ -901,7 +901,7 @@ button.submit:hover, button[type='submit']:hover {
 }
 
 .btn:hover, .button:hover {
-  background-color: #F15412;
+  background-color: #544b4b;
 }
 
 .btn.btn-sm, .button.btn-sm {
@@ -3025,7 +3025,7 @@ table .product-thumbnail img {
 }
 
 .deal h2 {
-  color: #ff3551;
+  color: #080808;
   font-weight: 600;
   font-size: 26px;
   line-height: 1.1;
@@ -3088,7 +3088,7 @@ table .product-thumbnail img {
 .deal .btn {
   background: none;
   border: 2px solid #F15412;
-  color: #F15412;
+  color: #050505;
   border-radius: 4px;
   font-size: 14px;
   padding: 10px 24px;
@@ -3149,7 +3149,7 @@ table .product-thumbnail img {
   padding: 9px 8px 6px 8px;
   line-height: 1;
   border-radius: 4px;
-  color: #F15412;
+  color: #0a0a0a;
 }
 
 /*Page > About*/
@@ -3438,12 +3438,12 @@ table .product-thumbnail img {
   height: 40px;
   line-height: 44px;
   border-radius: 50px;
-  background-color: #e8f6ea;
+  background-color: #fcfefc;
   text-align: center;
   margin-right: 3px;
   position: relative;
   display: inline-block;
-  border: 1px solid #cce7d0;
+  border: 1px solid #f5e9e9;
 }
 
 .product-cart-wrap .product-action-1 button.small, .product-cart-wrap .product-action-1 a.action-btn.small {
@@ -3465,7 +3465,7 @@ table .product-thumbnail img {
   font-size: 11px;
   padding: 7px 10px;
   color: #ffffff;
-  background-color: #F15412;
+  background-color: #080808;
   content: attr(aria-label);
   line-height: 1.3;
   -webkit-transition-delay: .1s;
@@ -4435,7 +4435,7 @@ table .product-thumbnail img {
 }
 
 .product-extra-link2 a:hover {
-  background-color: #F15412;
+  background-color: #0a0a09;
   color: #fff;
 }
 
