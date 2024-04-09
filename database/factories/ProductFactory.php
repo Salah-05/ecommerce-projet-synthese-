@@ -17,11 +17,11 @@ class ProductFactory extends Factory
     public function definition()
     {
         $product_name= $this->faker->unique()->words($nb=6,$asText = true);
-        $slug=Str::slug($product_name,'-');
+        $slug= Str::slug($product_name,'-');
         return [
             'name' => $product_name,
             'slug' => $slug,
-            'short_description' => $this->faker->text(200),
+            'short_description' => $this->faker->sentence(), // Limitez à une seule phrase
             'description' => $this->faker->text(500),
             'regular_price' => $this->faker->numberBetween(10,500),
             'SKU' => 'PRD' . $this->faker->unique()->numberBetween(100,500),
@@ -30,5 +30,6 @@ class ProductFactory extends Factory
             'image' => 'product-'.$this->faker->numberBetween(1,16),
             'category_id' => $this->faker->numberBetween(1,5)
         ];
+
     }
 }
