@@ -7,11 +7,19 @@ use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Cart;
-class ShopComponent extends Component
+class SearchComponent extends Component
 {
     use WithPagination;
     public $pageSize=9;
     public $orderBy= "Default Sorting";
+
+    public $q;
+    public $search_term;
+
+    public function mount(){
+        $this->fill(request()->only('q'));
+        $this->search_term = '%'.$this->q . '%';
+    }
 
     public function store($product_id,$product_name,$product_price)
     {
@@ -32,20 +40,20 @@ class ShopComponent extends Component
     {
         if($this->orderBy == 'Price: Low to High')
         {
-            $products = Product::orderBy('regular_price','ASC')->paginate($this->pageSize);
+            $products = Product::where('name','like',$this->search_term)->orderBy('regular_price','ASC')->paginate($this->pageSize);
         }
         else if ($this->orderBy =='Price: High to Low')
         {
-            $products = Product::orderBy('regular_price','DESC')->paginate($this->pageSize);
+            $products = Product::where('name','like',$this->search_term)->orderBy('regular_price','DESC')->paginate($this->pageSize);
         }
         else if($this->orderBy == 'Sort by Newness')
         {
-            $products = Product::orderBy('regular_price','DESC')->paginate($this->pageSize);
+            $products = Product::where('name','like',$this->search_term)->orderBy('regular_price','DESC')->paginate($this->pageSize);
         }
         else{
-            $products =  Product::paginate($this->pageSize);
+            $products = Product::where('name','like',$this->search_term)->paginate($this->pageSize);
         }
-        $categories=Category::orderBy('name','ASC')->get();
-        return view('livewire.shop-component',['products'=>$products, 'categories'=>$categories]);
+        $categories=Category::where('name','like',$this->search_term)->orderBy('name','ASC')->get();
+        return view('livewire.search-component',['products'=>$products, 'categories'=>$categories]);
     }
 }
