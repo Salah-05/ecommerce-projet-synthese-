@@ -83,7 +83,7 @@
                                                 <input type="text" required="" name="email" placeholder="Your Email" :value="old('email')" required autofocus>
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Password" required autofocus="current-password">
+                                                <input required="" type="password" name="password" placeholder="Password" required autocomplete="current-password">
                                             </div>
                                             <div class="login_footer form-group">
                                                 <div class="chek-form">
