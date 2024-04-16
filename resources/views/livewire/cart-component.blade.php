@@ -35,7 +35,7 @@
                                 </thead>
                                 <tbody>
 
-                                    @foreach (Cart ::content() as $item)
+                                    @foreach (Cart ::instance('cart')->content() as $item)
                                     <tr>
                                         <td class="image product-thumbnail"><img src="{{asset('assets/imgs/shop/product-')}}{{$item->model->id}}-1.jpg" alt="#"></td>
                                         <td class="product-des product-name">
