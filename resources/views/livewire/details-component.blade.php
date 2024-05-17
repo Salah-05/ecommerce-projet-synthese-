@@ -142,6 +142,7 @@
                                     <!-- Detail Info -->
                                 </div>
                             </div>
+                            //
                             <div class="tab-style3">
                                 <ul class="nav nav-tabs text-uppercase">
                                     <li class="nav-item">
@@ -304,7 +305,7 @@
                                                             </div>
                                                         </div>
                                                         <!--single-comment -->
-                                                        <div class="single-comment justify-content-between d-flex">
+                                                        {{-- //<div class="single-comment justify-content-between d-flex">
                                                             <div class="user justify-content-between d-flex">
                                                                 <div class="thumb text-center">
                                                                     <img src="{{asset('assets/imgs/page/avatar-7.jpg" al')}}t="">
@@ -325,30 +326,8 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> --}}
                                                         <!--single-comment -->
-                                                        <div class="single-comment justify-content-between d-flex">
-                                                            <div class="user justify-content-between d-flex">
-                                                                <div class="thumb text-center">
-                                                                    <img src="{{asset('assets/imgs/page/avatar-8.jpg" al')}}t="">
-                                                                    <h6><a href="#">Steven Keny</a></h6>
-                                                                    <p class="font-xxs">Since 2010</p>
-                                                                </div>
-                                                                <div class="desc">
-                                                                    <div class="product-rate d-inline-block">
-                                                                        <div class="product-rating" style="width:90%">
-                                                                        </div>
-                                                                    </div>
-                                                                    <p>Authentic and Beautiful, Love these way more than ever expected They are Great earphones</p>
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <div class="d-flex align-items-center">
-                                                                            <p class="font-xs mr-30">December 4, 2020 at 3:12 pm </p>
-                                                                            <a href="#" class="text-brand btn-reply">Reply <i class="fi-rs-arrow-right"></i> </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
                                                         <!--single-comment -->
                                                     </div>
                                                 </div>

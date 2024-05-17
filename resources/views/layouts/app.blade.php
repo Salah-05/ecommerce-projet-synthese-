@@ -26,12 +26,16 @@
                         <div class="header-info">
                         <ul>
                                 <li>
-                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> English <i class="fi-rs-angle-small-down"></i></a>
-                                    <ul class="language-dropdown">
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png" alt="">Français</a></li>
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-dt.png" alt="">Deutsch</a></li>
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-ru.png" alt="">Pусский</a></li>
-                                    </ul>
+                                    <i class="fi-rs-world"></i>
+                                    <form action="{{ route('setLanguage') }}" method="POST">
+                                        @csrf
+                                        <select name="language" onchange="this.form.submit()">
+                                            <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>English</option>
+                                            <option value="fr" {{ app()->getLocale() == 'fr' ? 'selected' : '' }}>Français</option>
+                                            <option value="ar" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>العربية</option>
+                                        </select>
+                                    </form>
+                                    
                                 </li>
                             </ul>
                         </div>
@@ -40,7 +44,7 @@
                         <div class="text-center">
                             <div id="news-flash" class="d-inline-block">
                                 <ul>
-                                    <li>Get great devices up to 50% off <a href="shop.html">View details</a></li>
+                                    <li> {{ __('messages.Get_great_devices_up_to_50%_off') }}<a href="shop.html">{{ __('messages.View_details') }}View details</a></li>
                                     <li>Supper Value Deals - Save more with coupons</li>
                                     <li>Trendy 25silver jewelry, save up 35% off today <a href="shop.html">Shop now</a></li>
                                 </ul>
@@ -73,11 +77,7 @@
                         <a href="index.html"><img src="assets/imgs/logo/logonike3.png" alt="logo"></a>
                     </div>
                     <div class="header-right">
-                        <div class="search-style-1">
-                            <form action="#">
-                                <input type="text" placeholder="Search for items...">
-                            </form>
-                        </div>
+                        @livewire("search-component")
                         <div class="header-action-right">
                             <div class="header-action-2">
                                 <div class="header-action-icon-2">
@@ -686,5 +686,6 @@
 <script src="{{asset('assets/js/main.js?v=3.3')}}"></script>
 <script src="{{asset('assets/js/shop.js?v=3.3')}}"></script>
 @livewireScripts
+@stack('scripts')
 </body>
 </html>

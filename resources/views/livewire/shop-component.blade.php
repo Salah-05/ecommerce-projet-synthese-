@@ -3,8 +3,8 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> Shop
+                    <a href="index.html" rel="nofollow">{{ __('messages.home') }}</a>
+                    <span></span> {{ __('messages.shop') }}
                 </div>
             </div>
         </div>
@@ -14,13 +14,13 @@
                     <div class="col-lg-9">
                         <div class="shop-product-fillter">
                             <div class="totall-product">
-                                <p> We found <strong class="text-brand">{{$products->total()}}</strong> items for you!</p>
+                                <p>{{ __('messages.we_found') }} <strong class="text-brand">{{$products->total()}}</strong> {{ __('messages.items_for_you') }}</p>
                             </div>
                             <div class="sort-by-product-area">
                                 <div class="sort-by-cover mr-10">
                                     <div class="sort-by-product-wrap">
                                         <div class="sort-by">
-                                            <span><i class="fi-rs-apps"></i>Show:</span>
+                                            <span><i class="fi-rs-apps"></i> {{ __('messages.show') }} Show:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
                                             <span> {{$pageSize}}<i class="fi-rs-angle-small-down"></i></span>
@@ -38,18 +38,18 @@
                                 <div class="sort-by-cover">
                                     <div class="sort-by-product-wrap">
                                         <div class="sort-by">
-                                            <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
+                                            <span><i class="fi-rs-apps-sort"></i> {{ __('messages.sort_by') }}:</span>
                                         </div>
                                         <div class="sort-by-dropdown-wrap">
-                                            <span> default Sorting <i class="fi-rs-angle-small-down"></i></span>
+                                            <span> {{ __('messages.default_sorting') }}  <i class="fi-rs-angle-small-down"></i></span>
                                         </div>
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a class="{{ $orderBy=='Default Sorting' ? 'active': ''}}" href="#" wire:click.prevent="changeOrderBy('Default Sorting')">Default Sorting</a></li>
-                                            <li><a class="{{ $orderBy=='Price: Low to High' ? 'active': ''}}" href="#" wire:click.prevent="changeOrderBy('Price: Low to High')">Price: Low to High</a></li>
-                                            <li><a class="{{ $orderBy=='Price: High to Low' ? 'active': ''}}" href="#" wire:click.prevent="changeOrderBy('Price: High to Low')">Price: High to Low</a></li>
-                                            <li><a class="{{ $orderBy=='Sort By Newness' ? 'active': ''}}" href="#" wire:click.prevent="changeOrderBy('Sort By Newness')">Sort By Newness</a></li>
+                                            <li><a class="{{ $orderBy=='Default Sorting' ? 'active': ''}}" href="#" wire:click.prevent="changeOrderBy('Default Sorting')"> {{ __('messages.default_sorting') }}</a></li>
+                                            <li><a class="{{ $orderBy=='Price: Low to High' ? 'active': ''}}" href="#" wire:click.prevent="changeOrderBy('Price: Low to High')"> {{ __('messages.price_low_high') }} </a></li>
+                                            <li><a class="{{ $orderBy=='Price: High to Low' ? 'active': ''}}" href="#" wire:click.prevent="changeOrderBy('Price: High to Low')"> {{ __('messages.price_high_low') }}</a></li>
+                                            <li><a class="{{ $orderBy=='Sort By Newness' ? 'active': ''}}" href="#" wire:click.prevent="changeOrderBy('Sort By Newness')">{{ __('messages.sort_by_newness') }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -69,16 +69,16 @@
                                         <div class="product-action-1">
                                             <a aria-label="Quick view" class="action-btn hover-up" href="{{route('product.details',['slug'=>$product->slug])}}" >
                                                 <i class="fi-rs-search"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
+                                            <a aria-label="{{ __('messages.add_to_wishlist') }}" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                            <a aria-label="{{ __('messages.compare') }}" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">Hot</span>
+                                            <span class="hot"> {{ __('messages.hot') }}</span>
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Music</a>
+                                            <a href="shop.html"> {{ __('messages.music') }}Music</a>
                                         </div>
                                         <h2><a href="product-details.html">{{$product->name}}</a></h2>
                                         <div class="rating-result" title="90%">
@@ -91,7 +91,7 @@
                                             <span class="old-price">{{$product->regular_price}}</span>
                                         </div>
                                         <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="#" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            <a aria-label="{{ __('messages.add_to_cart') }}" class="action-btn hover-up" href="#" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})"><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -129,25 +129,25 @@
                         <!-- Fillter By Price -->
                         <div class="sidebar-widget price_range range mb-30">
                             <div class="widget-header position-relative mb-20 pb-10">
-                                <h5 class="widget-title mb-10">Fill by price</h5>
+                                <h5 class="widget-title mb-10"> {{ __('messages.we_found') }}Fillter by price</h5>
                                 <div class="bt-1 border-color-1"></div>
                             </div>
                             <div class="price-filter">
                                 <div class="price-filter-inner">
-                                    <div id="slider-range"></div>
+                                    <div id="slider-range" wire:ignore></div>
                                     <div class="price_slider_amount">
                                         <div class="label-input">
-                                            <span>Range:</span><input type="text" id="amount" name="price" placeholder="Add Your Price">
+                                            <span> {{ __('messages.we_found') }}Range:</span><span class="text-info">${{$min_value}}</span> - <span class="text-info">${{$max_value}}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="list-group">
                                 <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900">Color</label>
+                                    <label class="fw-900"> {{ __('messages.we_found') }}Color</label>
                                     <div class="custome-checkbox">
                                         <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
-                                        <label class="form-check-label" for="exampleCheckbox1"><span>Red (56)</span></label>
+                                        <label class="form-check-label" for="exampleCheckbox1"><span> Red (56)</span></label>
                                         <br>
                                         <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="">
                                         <label class="form-check-label" for="exampleCheckbox2"><span>Green (78)</span></label>
@@ -173,7 +173,7 @@
                         <!-- Product sidebar Widget -->
                         <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
                             <div class="widget-header position-relative mb-20 pb-10">
-                                <h5 class="widget-title mb-10">New products</h5>
+                                <h5 class="widget-title mb-10"> {{ __('messages.we_found') }}New products</h5>
                                 <div class="bt-1 border-color-1"></div>
                             </div>
                             <div class="single-post clearfix">
@@ -181,7 +181,7 @@
                                     <img src="{{asset('assets/imgs/shop/thumbnail-3.jpg')}}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h5><a href="product-details.html">Chen Cardigan</a></h5>
+                                    <h5><a href="product-details.html"> {{ __('messages.we_found') }}Chen Cardigan</a></h5>
                                     <p class="price mb-0 mt-5">$99.50</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width:90%"></div>
@@ -193,7 +193,7 @@
                                     <img src="{{asset('assets/imgs/shop/thumbnail-4.jpg')}}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h6><a href="product-details.html">Chen Sweater</a></h6>
+                                    <h6><a href="product-details.html"> {{ __('messages.we_found') }}Chen Sweater</a></h6>
                                     <p class="price mb-0 mt-5">$89.50</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width:80%"></div>
@@ -205,8 +205,8 @@
                                     <img src="{{asset('assets/imgs/shop/thumbnail-5.jpg')}}" alt="#">
                                 </div>
                                 <div class="content pt-10">
-                                    <h6><a href="product-details.html">Colorful Jacket</a></h6>
-                                    <p class="price mb-0 mt-5">$25</p>
+                                    <h6><a href="product-details.html"> {{ __('messages.we_found') }}Colorful Jacket</a></h6>
+                                    <p class="price mb-0 mt-5"> {{ __('messages.we_found') }}$25</p>
                                     <div class="product-rate">
                                         <div class="product-rating" style="width:60%"></div>
                                     </div>
@@ -216,9 +216,9 @@
                         <div class="banner-img wow fadeIn mb-45 animated d-lg-block d-none">
                             <img src="{{asset('assets/imgs/banner/banner-11.jpg')}}" alt="">
                             <div class="banner-text">
-                                <span>Women Zone</span>
-                                <h4>Save 17% on <br>Office Dress</h4>
-                                <a href="shop.html">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                                <span> {{ __('messages.we_found') }}Women Zone</span>
+                                <h4> {{ __('messages.we_found') }}Save 17% on <br> {{ __('messages.we_found') }}Office Dress</h4>
+                                <a href="shop.html"> {{ __('messages.we_found') }}Shop Now <i class="fi-rs-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -227,3 +227,22 @@
         </section>
     </main>
 </div>
+@push('scripts')
+<script>
+ var sliderrange = $('#slider-range');
+    var amountprice = $('#amount');
+    $(function() {
+        sliderrange.slider({
+            range: true,
+            min: 0,
+            max: 1000,
+            values: [0, 1000],
+            slide: function(event, ui) {
+                // amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
+                @this.set('min_value',ui.values[0]);
+                @this.set('max_value',ui.values[1]);
+            }
+        });
+    }); 
+</script>   
+@endpush    

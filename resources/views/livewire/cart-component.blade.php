@@ -82,7 +82,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-lg-12">
                                             <div class="custom_select">
-                                                <select class="form-control select-active">
+                                                {{-- <select class="form-control select-active">
                                                     <option value="">Choose a option...</option>
                                                     <option value="AX">Aland Islands</option>
                                                     <option value="AF">Afghanistan</option>
@@ -328,7 +328,7 @@
                                                     <option value="YE">Yemen</option>
                                                     <option value="ZM">Zambia</option>
                                                     <option value="ZW">Zimbabwe</option>
-                                                </select>
+                                                </select> --}}
                                             </div>
                                         </div>
                                     </div>

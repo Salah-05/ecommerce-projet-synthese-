@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\commentController;
+use App\Http\Controllers\contactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomeComponent;
@@ -10,8 +12,10 @@ use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\CategoryComponent;
-
-
+use App\Http\Livewire\ContactComponent;
+use App\Http\Livewire\SearchComponent;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\App;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +52,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/contact', \App\Http\Livewire\ContactComponent::class)->name('contact');
+    Route::post('/broadcast', [ContactController::class, 'broadcast']);
+    Route::post('/receive', [ContactController::class, 'receive']);
+});
+Route::middleware('auth')->group(function () {
+    Route::get('/reviews', \App\Http\Livewire\CommentComponent::class)->name('contact');
+    Route::post('/broadcast1', [commentController::class, 'broadcast']);
+    Route::post('/receive1', [commentController::class, 'receive']);
+});
+
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
 });
@@ -55,6 +70,14 @@ Route::middleware(['auth'])->group(function(){
 Route::middleware(['auth','authadmin'])->group(function(){
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
 });
+Route::get('/fetch-suggestions', [SearchComponent::class, 'fetchSuggestions']);
 
+Route::post('/set-language', function () {
+    $language = request('language');
+    if (in_array($language, ['en', 'fr', 'ar'])) {
+        Session::put('locale', $language);
+    }
+    return redirect()->back();
+})->name('setLanguage');
 
 require __DIR__.'/auth.php';
