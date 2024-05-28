@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class reviews extends Model
 {
     use HasFactory;
+    protected $fillable = ['message', 'user_id','stars','product_id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

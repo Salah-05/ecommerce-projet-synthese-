@@ -28,7 +28,7 @@
         <div class="bottom">
             <form id="chat-form">
                 <input type="text" name="message" id="message" placeholder="enter message...">
-                <button type="submit">Send</button>
+                <button type="submit"></button>
             </form>
         </div>
     </div>
@@ -74,7 +74,6 @@
                 }).done(function(res) {
                     $(".messages").append(res);  // Ensure new messages are appended
                     $("#message").val('');
-                    $(document).scrollTop($(document).height());
                 }).fail(function(jqXHR, textStatus, errorThrown) {
                     console.error('Error sending message:', textStatus, errorThrown);
                 });

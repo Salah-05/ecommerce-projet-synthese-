@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\cartController;
 use App\Http\Controllers\commentController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Livewire\About;
+use App\Http\Livewire\AboutComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ShopComponent;
@@ -12,10 +15,12 @@ use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\CategoryComponent;
+use App\Http\Livewire\CommentComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\SearchComponent;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,17 +56,27 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::get('/about', \App\Http\Livewire\AboutComponent1::class)->name('about');
 
 Route::middleware('auth')->group(function () {
     Route::get('/contact', \App\Http\Livewire\ContactComponent::class)->name('contact');
+    Route::get('/Checkout', \App\Http\Livewire\CheckoutComponent::class)->name('Checkout');
+    Route::DELETE('/cancel', \App\Http\Livewire\CheckoutComponent::class)->name('cancel');
     Route::post('/broadcast', [ContactController::class, 'broadcast']);
-    Route::post('/receive', [ContactController::class, 'receive']);
+    Route::post('/receive', [ContactController::class, 'receive'])->name('receive');
 });
 Route::middleware('auth')->group(function () {
-    Route::get('/reviews', \App\Http\Livewire\CommentComponent::class)->name('contact');
-    Route::post('/broadcast1', [commentController::class, 'broadcast']);
-    Route::post('/receive1', [commentController::class, 'receive']);
+    Route::get('/reviews', \App\Http\Livewire\CommentComponent::class)->name('reviews');
+    Route::get('/comments', CommentComponent::class)->name('comments.index');
+    Route::post('/comments', [CommentComponent::class, 'store'])->name('comments.store');
+
+    Route::post('/ajouterCart', [cartController::class, 'ajouterCart'])->name('ajouterCart');
+    Route::put('/modifiercart/id', [cartController::class, 'modifiercart'])->name('modifiercart');
+    Route::post('/addcommande', [cartController::class, 'addcommande'])->name('addcommande');
+    Route::get('/coupons', \App\Http\Livewire\Coupons::class)->name('coupons');
 });
+
+
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
